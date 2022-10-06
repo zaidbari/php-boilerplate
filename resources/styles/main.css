@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.form-input {
+/* .form-input {
     @apply  focus:border-indigo-500 border-2 block w-full py-2 px-4 outline-none sm:text-sm border-gray-300 rounded-md;
 }
 
 .button-primary {
     @apply flex items-center justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-}
+} */

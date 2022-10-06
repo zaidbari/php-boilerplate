@@ -27,18 +27,20 @@ abstract class Model
             $_ENV['DB_PASSWORD']
         );
 
-        return new Builder('mysql', function ( $query, $queryString, $queryParameters ) use ( $connection ) {
-            $statement = $connection->prepare($queryString);
-            $statement->execute($queryParameters);
-            if ($query instanceof FetchableInterface ) { 
-                return $statement->fetchAll(\PDO::FETCH_ASSOC);
-            } elseif ($query instanceof Insert ) { 
-                return $connection->lastInsertId();
-            } else {
-                return $statement->rowCount();
-            }
+        return new Builder(
+            'mysql',
+            function ( $query, $queryString, $queryParameters ) use ( $connection ) {
+                $statement = $connection->prepare($queryString);
+                $statement->execute($queryParameters);
+                if ($query instanceof FetchableInterface ) { 
+                    return $statement->fetchAll(\PDO::FETCH_ASSOC);
+                } elseif ($query instanceof Insert ) { 
+                    return $connection->lastInsertId();
+                } else {
+                    return $statement->rowCount();
+                }
             
-        });
-
+            }
+        );
     }
 }

@@ -5,15 +5,20 @@ namespace App\Services;
 class Upload
 {
     public string $target_file;
-    public $temp_name;
+    public string $temp_name;
     public string $save_name;
     public string $computed_path;
     public bool $make_thumb;
     public int $width;
     public int $height;
 
-    public function __construct( string $string, string $path = "", bool $thumb = false, $width = 200, $height = 200 )
-    {
+    public function __construct(
+        string $string, 
+        string $path = "", 
+        bool $thumb = false, 
+        int $width = 200, 
+        int $height = 200
+    ) {
 
         $this->make_thumb = $thumb;
         $this->width = $width;
@@ -30,7 +35,7 @@ class Upload
         }
 
         $this->target_file = $this->computed_path . '/' . $this->save_name;
-        $this->temp_name = $_FILES[$string]["tmp_name"];
+        $this->temp_name = (string) $_FILES[$string]["tmp_name"];
     }
 
     public function move() : bool
@@ -44,7 +49,10 @@ class Upload
 
     public static function check( $file ) : bool
     {
-        return !( !isset($_FILES[ $file ]) || $_FILES[ $file ]['error'] == UPLOAD_ERR_NO_FILE );
+        return !(
+            !isset($_FILES[ $file ]) || 
+            $_FILES[ $file ]['error'] == UPLOAD_ERR_NO_FILE
+        );
     }
 
     public static function checkType( $file, $type = [] ) : bool
@@ -58,7 +66,7 @@ class Upload
         $thumbnail_width = $this->width;
         $thumbnail_height = $this->height;
         $imgcreatefrom = "imagecreatefromjpeg";
-        $arr_image_details = getimagesize("$this->target_file"); // pass id to thumb name
+        $arr_image_details = getimagesize("$this->target_file");
         $original_width = $arr_image_details[0];
         $original_height = $arr_image_details[1];
         if ($original_width > $original_height) {
@@ -83,10 +91,20 @@ class Upload
             $imgcreatefrom = "imagecreatefrompng";
         }
         if ($imgt) {
-
             $old_image = $imgcreatefrom("$this->target_file");
             $new_image = imagecreatetruecolor($thumbnail_width, $thumbnail_height);
-            imagecopyresized($new_image, $old_image, $dest_x, $dest_y, 0, 0, $new_width, $new_height, $original_width, $original_height);
+            imagecopyresized(
+                $new_image, 
+                $old_image, 
+                $dest_x, 
+                $dest_y, 
+                0, 
+                0, 
+                $new_width,
+                $new_height,
+                $original_width,
+                $original_height
+            );
             $imgt($new_image, $this->computed_path . '/thumb_' . $this->save_name);
         }
     }

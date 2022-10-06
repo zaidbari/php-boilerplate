@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "daisyui": "^2.31.0",
     "tailwindcss": "^3.0.24"
   },
   "name": "alughat-ul-arabia",

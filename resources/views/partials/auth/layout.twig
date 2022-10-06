@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="corporate">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"
@@ -8,9 +8,9 @@
 	<link rel="stylesheet" href="/resources/styles/main_out.css"/>
 	<title>Dentist Clinic</title>
 </head>
-<body class="bg-slate-100">
+<body>
 
-<div class="p-5">
+<div>
 	{% include 'auth/navbar.twig' %}
 	{% if FLASH() %}
 		{% if FLASH().success %}
