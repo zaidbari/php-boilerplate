@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "tailwindcss": "^3.0.24"
+  },
+  "name": "alughat-ul-arabia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./resources/styles/main.css -o ./resources/styles/main_out.css --watch",
+    "build": "npx tailwindcss -i ./resources/styles/main.css -o ./resources/styles/main_out.css --minify"
+  },
+  "author": "zaidbari",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,30 @@
+{
+  "name": "zaidbari/alughat-ul-arabia",
+  "description": "Website for madrassa",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "App\\": "App/"
+    }
+  },
+  "authors": [
+    {
+      "name": "zaidbari",
+      "email": "hello@itszbari.com"
+    }
+  ],
+  "require": {
+    "bramus/router": "~1.6",
+    "ext-pdo": "*",
+    "vlucas/phpdotenv": "^5.4",
+    "rakit/validation": "^1.4",
+    "twig/twig": "^3.0",
+    "clancats/hydrahon": "^1.1"
+  },
+  "require-dev": {
+    "monolog/monolog": "^2.5",
+    "filp/whoops": "^2.14",
+    "squizlabs/php_codesniffer": "^3.7"
+  }
+}

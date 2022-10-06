@@ -1,0 +1,44 @@
+{% extends "public/layout.twig" %}
+{% block content %}
+	<section class="text-gray-600 h-screen items-center flex body-font">
+		<div class="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
+			<img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
+					 src="/resources/assets/images/header.svg">
+			<div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
+				<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+					Welcome to the Dentist Clinic.
+				</h1>
+				<p class="mb-8 leading-relaxed">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
+					assumenda dicta dignissimos ducimus excepturi illum in, itaque minus nostrum optio perspiciatis
+					quaerat sapiente sunt tempora tenetur velit, voluptatem, voluptatibus voluptatum.
+				</p>
+				<p class="text-sm mt-2 text-gray-500 mb-8 w-full">Ready for your doctor's appointment?</p>
+				<div class="flex md:flex-row flex-col gap-x-10 gap-y-5">
+					<a href="/login" class="bg-gray-100 inline-flex py-3 px-5 rounded-lg hover:bg-gray-200 focus:outline-none">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+								 stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round"
+										d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+						</svg>
+						<span class="ml-4 flex items-start flex-col leading-none">
+            <span class="text-xs text-gray-600 mb-1">Have an account?</span>
+            <span class="title-font font-medium ">Login here</span>
+          </span>
+					</a>
+					<a href="/signup" class="bg-gray-100 inline-flex py-3 px-5 rounded-lg hover:bg-gray-200 focus:outline-none">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+								 stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round"
+										d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+						</svg>
+						<span class="ml-4 flex items-start flex-col leading-none">
+            <span class="text-xs text-gray-600 mb-1">New here?</span>
+            <span class="title-font font-medium">Register today</span>
+          </span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

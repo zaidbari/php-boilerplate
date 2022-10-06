@@ -1,0 +1,10 @@
+/composer.lock
+/vendor
+/node_modules
+/logs
+/cache
+/yarn.lock
+/.idea
+/files
+error_logs
+.env
