@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 // autoloader
@@ -7,7 +8,7 @@ use Bramus\Router\Router;
 
 require __DIR__ . '/vendor/autoload.php';
 
-App::Run(__DIR__);
+App::run(__DIR__);
 
 // create a new router
 $router = new Router();

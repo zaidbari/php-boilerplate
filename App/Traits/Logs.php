@@ -12,13 +12,15 @@ trait Logs
     public static function log( $type, string $message, array $data = [] )
     {
         $path = $_SERVER['DOCUMENT_ROOT'] . '/logs/' . $type . '.log';
-        $stream = new StreamHandler($path, $type);
+
+        $stream = new StreamHandler($path, $type, true, 0777);
         $firephp = new FirePHPHandler();
 
         $dateFormat = "d-M-Y, g:i a";
 
-        // the default output format is "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n"
-        // we now change the default output format according to our needs.
+        /** 
+         * "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n"
+         */
         $output = "%datetime% > %message% %context% %extra%\n";
 
         // finally, create a formatter
